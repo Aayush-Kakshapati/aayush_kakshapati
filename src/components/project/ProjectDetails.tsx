@@ -134,12 +134,12 @@ export default function ProjectDetails({ project }: ProjectDetailsProps) {
                 </Heading>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
-                    <span
+                    <Text
                       key={tech}
-                      className="px-3 py-1 rounded-md text-sm font-medium border border-(--border) hover:border-(--muted) bg-(--surface-elevated)"
+                      className="px-3 py-1 rounded-md text-sm border border-(--border) hover:border-(--muted) bg-(--surface-elevated)"
                     >
                       {tech}
-                    </span>
+                    </Text>
                   ))}
                 </div>
               </div>
