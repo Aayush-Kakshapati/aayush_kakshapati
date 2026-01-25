@@ -50,7 +50,7 @@ export default function AboutPage() {
                   />
                   <div className="flex-1 p-4 space-y-3">
                     <Heading as="h3">Character</Heading>
-                    <Row label="Name" value="Aayush" />
+                    <Row label="Name" value="Aayush Kakshapati" />
                     <Row label="Alias" value="Systemsmith" />
                     <Row label="Class" value="Full-Stack Developer" />
                     <Row label="Experience" value="0–1 Years" />

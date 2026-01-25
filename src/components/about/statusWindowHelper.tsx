@@ -5,7 +5,7 @@ export function Row({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex justify-between gap-4">
       <Mono>{label}</Mono>
-      <Text className="text-right text-(--foreground)">{value}</Text>
+      <Mono className="text-right text-(--foreground)">{value}</Mono>
     </div>
   );
 }
@@ -22,7 +22,7 @@ export function AnimatedStat({
   return (
     <MotionDiv variants={fadeUp} className="flex flex-col">
       <Mono className="block mb-1">{title}</Mono>
-      <div>{children}</div> {/* Wrap children in a div to avoid <p> nesting */}
+      <div>{children}</div>
       {progress !== undefined && <Progress percent={progress} />}
     </MotionDiv>
   );
