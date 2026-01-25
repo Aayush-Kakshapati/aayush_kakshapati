@@ -1,6 +1,6 @@
 "use client";
 
-import { Section } from "@/lib/section";
+import { Section } from "@/components/ui/section";
 import Card from "../ui/Card";
 import { Heading, Text, Mono } from "../ui/fonts";
 import {
@@ -12,6 +12,7 @@ import {
 import { projects } from "@/data/projects";
 import { FiGithub, FiArrowUpRight, FiImage } from "react-icons/fi";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FeaturedProjects() {
   const featuredProjects = projects.filter((p) => p.featured);
@@ -43,13 +44,16 @@ export default function FeaturedProjects() {
               className="grid md:grid-cols-12 gap-6 group relative overflow-hidden"
             >
               <div className="md:col-span-5 aspect-4/3 rounded-xl border border-(--border) overflow-hidden relative">
-                <div className="text-sm flex flex-col items-center">
-                  <FiImage className="mb-1" />
-                  Preview coming soon
-                </div>
-                <div className="absolute inset-0 bg-(--primary)/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-(--primary-foreground)">
-                  <FiArrowUpRight size={32} />
-                </div>
+                <Image
+                  src={
+                    project.images && project.images?.length > 0
+                      ? project.images[0]
+                      : ""
+                  }
+                  fill
+                  alt={project.name}
+                  className="object-cover rounded"
+                />
               </div>
 
               <div className="md:col-span-7 flex flex-col justify-between gap-4">
@@ -76,7 +80,7 @@ export default function FeaturedProjects() {
                 </div>
 
                 <Link
-                  href={`/projects/${project.slug}`}
+                  href="/projects"
                   className="inline-flex items-center gap-1 text-sm font-medium text-(--primary)"
                 >
                   View Details <FiArrowUpRight />

@@ -1,4 +1,4 @@
-import { motion, Variants } from "framer-motion";
+import { motion, HTMLMotionProps, Variants } from "framer-motion";
 
 export const fadeUp: Variants = {
   initial: { opacity: 0, y: 16 },
@@ -19,4 +19,4 @@ export const fadeUpTransition = {
   ease: [0.16, 1, 0.3, 1] as const,
 };
 
-export const MotionDiv = motion.div;
+export const MotionDiv: React.FC<HTMLMotionProps<"div">> = motion.div;

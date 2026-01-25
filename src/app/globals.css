@@ -32,6 +32,7 @@
 
   --surface: #141813;
   --surface-elevated: #1a1f19;
+  --hover-button: #6b8f6b;
 
   --primary: #9bb08c;
   --primary-foreground: #0f120e;
@@ -45,6 +46,6 @@
 
 html,
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--background) opacity(0.2);
+  color: var(--foreground) opacity(0.2);
 }

@@ -1,4 +1,4 @@
-import { Section } from "@/lib/section";
+import { Section } from "@/components/ui/section";
 import Card from "../ui/Card";
 import { Heading, Text, Mono } from "../ui/fonts";
 import {

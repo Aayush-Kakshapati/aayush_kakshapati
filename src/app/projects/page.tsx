@@ -1,50 +1,27 @@
 "use client";
 
-import { useState } from "react";
-import { projects } from "@/data/projects";
+import PageLayout from "@/components/global/PageLayout";
+import { Heading } from "@/components/ui/fonts";
 import ProjectDetails from "@/components/project/ProjectDetails";
-import { Heading, Text } from "@/components/ui/fonts";
-import Footer from "@/components/global/Footer";
-import Navbar from "@/components/global/Navbar";
+import { projects } from "@/data/projects";
+import GridBackground from "@/components/global/gridLayout";
 
 export default function ProjectsPage() {
-  const [activeProject, setActiveProject] = useState(projects[0]);
-
   return (
     <>
-      <Navbar />
-      <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8">
-        <div className="md:col-span-1 space-y-4">
-          <Heading as="h2" className="text-2xl mb-4">
-            All Projects
-          </Heading>
+      <GridBackground />
 
-          <div className="flex flex-col gap-2 overflow-y-auto max-h-[80vh]">
-            {projects.map((project) => (
-              <button
-                key={project.slug}
-                onClick={() => setActiveProject(project)}
-                className={`flex items-center gap-3 p-3 rounded-md text-left transition-colors
-                ${
-                  activeProject.slug === project.slug
-                    ? "bg-(--primary)/20"
-                    : "hover:bg-muted/20"
-                }`}
-              >
-                <div>
-                  <Text className="text-sm text-(--muted)">{project.year}</Text>
-                  <Text className="font-medium">{project.name}</Text>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
+      <PageLayout>
+        <Heading as="h1" className="mb-12 text-center">
+          Projects
+        </Heading>
 
-        <div className="md:col-span-2">
-          <ProjectDetails project={activeProject} />
+        <div className="space-y-6 max-w-4xl mx-auto">
+          {projects.map((project) => (
+            <ProjectDetails key={project.slug} project={project} />
+          ))}
         </div>
-      </div>
-      <Footer />
+      </PageLayout>
     </>
   );
 }

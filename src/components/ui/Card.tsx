@@ -14,13 +14,15 @@ export default function Card({
       className={cn(
         `
         rounded-2xl
-        border border-(--border) hover:border-(--muted)
+        border
         bg-(--surface-elevated)
         p-6
         flex flex-col
         gap-4
         `,
-        hover && "transition-colors hover:border-(--primary)",
+        hover
+          ? "border-(--border) transition-colors hover:border-(--primary)"
+          : "border-(--border)",
         className,
       )}
       {...props}

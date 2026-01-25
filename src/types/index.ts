@@ -28,9 +28,10 @@ export interface Project {
   name: string;
   slug: string;
   year: number;
+  github?: string;
   featured?: boolean;
   status?: string;
-  github?: string;
+  demo?: string;
   about?: string;
   techStack?: string[];
   images?: string[];

@@ -1,6 +1,6 @@
 "use client";
 
-import { Section } from "@/lib/section";
+import { Section } from "@/components/ui/section";
 import { Heading, Mono, Text } from "../ui/fonts";
 import {
   MotionDiv,
@@ -45,8 +45,6 @@ export default function Hero() {
           </Text>
         </MotionDiv>
 
-        {/* CTA Buttons */}
-        {/* CTA Buttons */}
         <MotionDiv
           variants={fadeUp}
           transition={fadeUpTransition}
@@ -59,7 +57,7 @@ export default function Hero() {
             View Projects
           </Link>
           <a
-            href="/resume.pdf"
+            href="/AayushKakshapati.pdf"
             download
             className="inline-block px-6 py-3 font-semibold rounded-md text-(--primary) border border-(--primary) hover:bg-(--primary) hover:text-(--primary-foreground) transition-colors duration-300 w-max"
           >

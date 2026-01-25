@@ -6,6 +6,7 @@ import Footer from "@/components/global/Footer";
 import HomePage from "./home/page";
 import LoadingScreen from "./loading";
 import { motion } from "framer-motion";
+import GridBackground from "@/components/global/gridLayout";
 
 export default function Page() {
   const [showLoader, setShowLoader] = useState<boolean | null>(null);
@@ -32,6 +33,7 @@ export default function Page() {
 
   return (
     <>
+      <GridBackground />
       {showLoader && <LoadingScreen onFinish={handleFinishLoading} />}
 
       {showContent && (
