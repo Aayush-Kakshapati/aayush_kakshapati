@@ -14,7 +14,7 @@ export default function LoadingScreen({ onFinish }: { onFinish: () => void }) {
         animate={{ clipPath: "inset(0 0% 0 0)" }}
         transition={{ duration: 2.5, ease: "easeInOut" }}
         onAnimationComplete={onFinish}
-        className="text-4xl md:text-6xl font-bold tracking-widest"
+        className="text-4xl md:text-6xl text-(--primary) font-bold tracking-widest"
       >
         AAYUSH
       </motion.h1>
