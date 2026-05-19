@@ -6,7 +6,8 @@ export interface Skill {
 }
 
 export interface Skills {
-  languagesFrameworks: Skill[];
+  frontend: Skill[];
+  backend: Skill[];
   databases: Skill[];
   tools: Skill[];
 }

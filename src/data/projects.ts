@@ -24,33 +24,36 @@ export const projects = [
     ],
   },
   {
-    name: "Centralized Donation Platform",
-    slug: "centralized-donation-platform",
-    year: 2026,
-    featured: true,
-    status: "In Progress",
-    github: "https://github.com/Aayush-Kakshapati",
-    about:
-      "Built a comprehensive platform that enables organizations and individuals to create causes, share them with the community, and securely collect donations. The system supports role-based access control to differentiate between administrators and users, ensuring secure and structured management of campaigns. Developed with a modular architecture, it incorporates DTO validation for reliable input handling, Prisma and PostgreSQL for efficient data management, and secure transaction processing with careful input validation. The platform prioritizes usability, providing an intuitive dashboard for tracking donations, managing campaigns, and generating insights, all while maintaining scalability and high security standards.",
-    techStack: [
-      "Next.js",
-      "NestJS",
-      "Prisma",
-      "PostgreSQL",
-      "JWT Authentication",
-    ],
-    images: [
-      "/projectImages/ComingSoon.png",
-      "/projectImages/ComingSoon.png",
-      "/projectImages/ComingSoon.png",
-      "/projectImages/ComingSoon.png",
-    ],
-    highlights: [
-      "Implemented role-based access control, providing secure differentiation between admin and user privileges for campaign management.",
-      "Designed a modular backend architecture with DTO validation, ensuring robust, maintainable, and scalable code.",
-      "Handled secure payment transactions with proper input validation, protecting user data and ensuring safe donation processing.",
-      "Developed an intuitive dashboard for users to track donations, monitor campaigns, and generate insightful analytics.",
-      "Streamlined cause creation and sharing workflows, making it simple for organizations and individuals to reach potential donors effectively.",
-    ],
-  },
-];
+  name: "Property Management System",
+  slug: "property-management-system",
+  year: 2026,
+  featured: true,
+  status: "In Progress",
+  github: "https://github.com/Aayush-Kakshapati",
+  about:
+    "Built a full-stack Property Management System that enables property owners, admins, and tenants to manage properties, units, leases, payments, and maintenance requests. The platform is split into a Next.js 14 frontend and a Django REST Framework backend, following a modular, service-oriented architecture. It supports role-based access control, secure JWT authentication, and structured data management across multiple relational entities. The system also includes an analytics dashboard for tracking occupancy, revenue, and maintenance activity.",
+  techStack: [
+    "Next.js",
+    "React.js",
+    "Tailwind CSS",
+    "Django",
+    "Django REST Framework",
+    "PostgreSQL",
+    "JWT Authentication",
+    "Axios",
+    "Recharts",
+  ],
+  images: [
+    "/projectImages/login.png",
+    "/projectImages/dashboardA.png",
+    "/projectImages/dashboardU.png",
+  ],
+  highlights: [
+    "Designed a multi-role system supporting owners, admins, and tenants with role-based access control.",
+    "Built a modular Django REST Framework backend with clean separation of concerns across apps (users, properties, leases, payments, maintenance).",
+    "Developed a Next.js 14 frontend with reusable UI components, protected routes, and centralized API service layer.",
+    "Implemented JWT-based authentication with secure token handling and automatic refresh flow.",
+    "Created a dashboard with real-time analytics including occupancy rate, revenue tracking, and maintenance status.",
+  ],
+}
+]
