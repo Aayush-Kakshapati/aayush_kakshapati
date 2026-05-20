@@ -1,29 +1,72 @@
-import nodemailer from "nodemailer";
+import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    console.log("API ROUTE HIT");
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASS,
+    console.log("RESEND KEY EXISTS:", !!process.env.RESEND_API_KEY);
+    console.log("CONTACT EMAIL:", process.env.CONTACT_EMAIL);
+
+    const body = await req.json();
+
+    console.log("BODY:", body);
+
+    const { name, email, message } = body;
+
+    if (!name || !email || !message) {
+      return NextResponse.json(
+        {
+          error: "All fields are required.",
+        },
+        { status: 400 },
+      );
+    }
+
+    const response = await resend.emails.send({
+      from: "Portfolio Contact <onboarding@resend.dev>",
+
+      to: process.env.CONTACT_EMAIL!,
+
+      subject: `New Portfolio Message from ${name}`,
+
+      replyTo: email,
+
+      html: `
+        <div>
+          <h2>Portfolio Contact</h2>
+
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+
+          <p>${message}</p>
+        </div>
+      `,
+    });
+
+    console.log("RESEND RESPONSE:", response);
+
+    return NextResponse.json(
+      {
+        success: true,
+        response,
       },
-    });
+      { status: 200 },
+    );
+  } catch (error) {
+    console.error("FULL ERROR:", error);
 
-    await transporter.sendMail({
-      from: email,
-      to: process.env.GMAIL_USER,
-      subject: `Portfolio Contact from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    });
-
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
-  } catch (err) {
-    console.error(err);
-    return new Response(JSON.stringify({ success: false, error: err }), {
-      status: 500,
-    });
+    return NextResponse.json(
+      {
+        success: false,
+        error:
+          error instanceof Error
+            ? error.message
+            : "Unknown error",
+      },
+      { status: 500 },
+    );
   }
 }

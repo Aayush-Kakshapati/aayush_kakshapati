@@ -32,7 +32,7 @@ export default function Contact() {
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || "Failed to send message");
+        throw new Error(data.error || data.details || "Failed to send message");
       }
 
       alert("Message sent!");
@@ -43,7 +43,7 @@ export default function Contact() {
         message: "",
       });
     } catch (error) {
-      console.error(error);
+      console.error("CONTACT API ERROR:", error);
       alert("Failed to send message.");
     }
   };
@@ -58,6 +58,7 @@ export default function Contact() {
       <form onSubmit={handleSubmit} className="space-y-4 mt-6">
         <input
           name="name"
+          value={formData.name}
           placeholder="Name"
           required
           onChange={handleChange}
@@ -66,6 +67,7 @@ export default function Contact() {
         <input
           name="email"
           type="email"
+          value={formData.email}
           placeholder="Email"
           required
           onChange={handleChange}
@@ -74,6 +76,7 @@ export default function Contact() {
         <textarea
           name="message"
           rows={4}
+          value={formData.message}
           placeholder="Message"
           required
           onChange={handleChange}
