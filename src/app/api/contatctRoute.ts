@@ -26,7 +26,7 @@ export async function POST(req: Request) {
     }
 
     const response = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
+      from: "Portfolio Contact <https://aayushkakshapati.vercel.app/>",
 
       to: process.env.CONTACT_EMAIL!,
 
