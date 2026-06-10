@@ -8,7 +8,6 @@ import {
 
   SiNodedotjs,
   SiExpress,
-  SiNestjs,
   SiPython,
   SiDjango,
 
@@ -28,16 +27,13 @@ import type { Skills } from "../types";
 export const skills: Skills = {
   frontend: [
     { name: "JavaScript", icon: SiJavascript },
-    { name: "TypeScript", icon: SiTypescript },
 
     { name: "React", icon: SiReact },
     { name: "Next.js", icon: SiNextdotjs },
-    { name: "Redux", icon: SiRedux },
     { name: "Tailwind CSS", icon: SiTailwindcss },
   ],
 
   backend: [
-    { name: "Node.js", icon: SiNodedotjs },
     { name: "Express.js", icon: SiExpress },
 
     { name: "Python", icon: SiPython },
