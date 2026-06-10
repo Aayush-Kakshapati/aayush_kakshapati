@@ -21,7 +21,6 @@ export default function HomePage() {
           <section className="flex flex-col gap-20">
             <FeaturedProjects />
             <Experience />
-            <Contact />
           </section>
         </div>
       </main>

@@ -68,14 +68,11 @@ export default function AboutPage() {
                       <div className="flex flex-wrap gap-2 mt-1">
                         {[
                           "JavaScript",
-                          "TypeScript",
                           "React",
                           "Next.js",
                           "Node.js",
                           "Express",
-                          "NestJS",
                           "Tailwind CSS",
-                          "Redux",
                         ].map((tech) => (
                           <TechChip key={tech} text={tech} />
                         ))}
@@ -96,7 +93,6 @@ export default function AboutPage() {
                           "Git",
                           "GitHub",
                           "REST APIs",
-                          "Prisma",
                           "Figma",
                           "GIMP",
                         ].map((tool) => (
@@ -123,9 +119,8 @@ export default function AboutPage() {
                     <AnimatedStat title="Current Learning" progress={30}>
                       <div className="flex flex-wrap gap-2 mt-1">
                         {[
-                          "NestJS",
-                          "Modular Service Design",
-                          "DTO Validation",
+                          "Django",
+                          "System Design"
                         ].map((learn) => (
                           <TechChip key={learn} text={learn} />
                         ))}
@@ -155,8 +150,8 @@ export default function AboutPage() {
                   desc: "React.js, Express.js, MongoDB, JWT, CRUD, secure APIs",
                 },
                 {
-                  title: "Centralized Donation Platform",
-                  desc: "NestJS, Next.js, Prisma, PostgreSQL, modular services",
+                  title: "Multi Tenant Property Management",
+                  desc: "Next.js, Django, PostgreSQL"
                 },
               ].map((proj) => (
                 <motion.div
@@ -180,7 +175,6 @@ export default function AboutPage() {
                 "VSCode — IDE",
                 "Figma — Design",
                 "Postman — API",
-                "Terminal — Productivity",
               ].map((item) => (
                 <motion.div key={item} whileHover={{ scale: 1.05 }}>
                   <Card hover>
@@ -196,8 +190,8 @@ export default function AboutPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
               {[
                 { name: "v1.0 - First Full-Stack App", percent: 100 },
-                { name: "v1.1 - Donation Platform", percent: 30 },
-                { name: "v1.2 - Automation Scripts", percent: 20 },
+                { name: "v1.1 - Property Managememt System", percent: 80 },
+                { name: "v1.2 - EveryDay SuperMart", percent: 4 },
               ].map((s) => (
                 <motion.div
                   key={s.name}
