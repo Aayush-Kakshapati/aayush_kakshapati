@@ -47,6 +47,7 @@ export const projects = [
     "/projectImages/login.png",
     "/projectImages/dashboardA.png",
     "/projectImages/dashboardU.png",
+    "/projectImages/maintenance.png",
   ],
   highlights: [
     "Designed a multi-role system supporting owners, admins, and tenants with role-based access control.",
